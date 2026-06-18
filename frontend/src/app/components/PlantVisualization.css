@@ -1,0 +1,375 @@
+.plant-3d-visual {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  padding-bottom: 50px;
+}
+
+.plant-3d-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.plant-3d-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.plant-3d-particle {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.plant-3d-structure {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-style: preserve-3d;
+}
+
+.plant-3d-pedestal {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-style: preserve-3d;
+}
+
+.pedestal-top {
+  width: 120px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  box-shadow: inset 0 2px 10px rgba(255, 255, 255, 0.1);
+}
+
+.pedestal-soil {
+  width: 100px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.8);
+}
+
+.pedestal-body {
+  width: 110px;
+  height: 50px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  position: absolute;
+  top: 10px;
+  z-index: 2;
+  border-radius: 10px 10px 40px 40px / 10px 10px 20px 20px;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+.pedestal-bottom {
+  width: 80px;
+  height: 15px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 50%;
+  position: absolute;
+  bottom: -5px;
+  z-index: 1;
+  filter: blur(5px);
+}
+
+.plant-3d-stem {
+  width: 8px;
+  height: 200px;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 4px;
+  z-index: 4;
+  box-shadow: 
+    inset -2px 0 4px rgba(0, 0, 0, 0.4), 
+    inset 2px 0 4px rgba(255, 255, 255, 0.6), 
+    0 0 15px var(--pot-accent, rgba(255,255,255,0.2));
+}
+
+.plant-3d-leaves {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 6;
+  transform-style: preserve-3d;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   UNIFIED PLANT CARD CLASSES
+   ═══════════════════════════════════════════════════════════ */
+
+.plant-empty {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  width: 100%;
+  height: 100%;
+  max-height: calc(100vh - 120px);
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.unified-plant-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-height: calc(100vh - 120px);
+  min-height: 400px;
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.persona-badge-header {
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  z-index: 20;
+}
+
+.persona-badge-emoji {
+  font-size: 28px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.persona-badge-title {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.persona-badge-desc {
+  margin: 4px 0 0;
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.plant-viz-area {
+  flex: 1;
+  min-height: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.plant-particles-container {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.plant-svg-container {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  min-height: 0;
+  z-index: 10;
+  overflow: visible;
+}
+
+.plant-progress-bar-container {
+  position: sticky;
+  bottom: 0;
+  padding: 16px 24px;
+  background: var(--bg-card);
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 30;
+}
+
+.plant-progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.plant-progress-track {
+  width: 100%;
+  height: 6px;
+  background: var(--bg-input);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.plant-progress-fill {
+  height: 100%;
+  background: var(--accent-amber);
+  box-shadow: 0 0 10px rgba(245, 166, 35, 0.3);
+  border-radius: 4px;
+}
+
+.plant-progress-fill-red {
+  background: linear-gradient(90deg, #ef4444, #22c55e);
+}
+
+.plant-warning-container {
+  padding: 12px 0;
+  text-align: center;
+}
+
+.plant-warning-label {
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: var(--label-color);
+}
+
+.plant-warning-text {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.color-SEED { color: #7CB87C; }
+.color-SPROUT { color: #7CB87C; }
+.color-GROWING { color: #7CB87C; }
+.color-THRIVING { color: #7CB87C; }
+.color-FLOURISHING { color: #F5A623; }
+.color-STRESSED { color: #D98E3F; }
+.color-WILTING { color: #C75450; }
+.color-CRITICAL { color: #C75450; }
+
+.plant-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform-style: preserve-3d;
+  transform-origin: bottom center;
+}
+
+.plant-3d-leaf-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform-style: preserve-3d;
+  transform-origin: bottom center;
+}
+
+.plant-3d-leaf {
+  width: 35px;
+  height: 70px;
+  background: linear-gradient(135deg, var(--leaf-accent), var(--leaf-base));
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  box-shadow: 
+    inset 4px 4px 10px rgba(255, 255, 255, 0.4),
+    inset -4px -4px 15px rgba(0, 0, 0, 0.3),
+    0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.plant-3d-leaf.right {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 0 40px 0 40px;
+  transform-origin: bottom left;
+}
+
+.plant-3d-leaf.left {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-radius: 40px 0 40px 0;
+  transform-origin: bottom right;
+}
+
+/* Glassy center vein */
+.plant-3d-leaf::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to top, rgba(255,255,255,0.7), transparent);
+  border-radius: 2px;
+}
+.plant-3d-leaf.right::before {
+  left: 0;
+  height: 120%;
+  transform-origin: bottom left;
+  transform: rotate(26deg);
+}
+.plant-3d-leaf.left::before {
+  right: 0;
+  height: 120%;
+  transform-origin: bottom right;
+  transform: rotate(-26deg);
+}
+
+.plant-3d-label {
+  position: absolute;
+  bottom: -20px;
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  z-index: 20;
+}
+
+.flower-shadow {
+  filter: drop-shadow(3px 8px 6px rgba(0,0,0,0.4));
+}
+
+.leaf-shadow {
+  filter: drop-shadow(2px 8px 6px rgba(0,0,0,0.4));
+}

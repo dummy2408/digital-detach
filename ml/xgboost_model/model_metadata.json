@@ -1,0 +1,76 @@
+{
+  "features": [
+    "Age",
+    "Daily_Usage_Hours",
+    "Sleep_Hours",
+    "Academic_Performance",
+    "Social_Interactions",
+    "Exercise_Hours",
+    "Anxiety_Level",
+    "Depression_Level",
+    "Self_Esteem",
+    "Parental_Control",
+    "Screen_Time_Before_Bed",
+    "Phone_Checks_Per_Day",
+    "Apps_Used_Daily",
+    "Time_on_Social_Media",
+    "Time_on_Gaming",
+    "Time_on_Education",
+    "Family_Communication",
+    "Weekend_Usage_Hours",
+    "Total_Screen_Time",
+    "Entertainment_Ratio",
+    "Sleep_Deficit",
+    "Weekend_Extra",
+    "Gender",
+    "School_Grade",
+    "Location",
+    "Phone_Usage_Purpose"
+  ],
+  "numerical_cols": [
+    "Age",
+    "Daily_Usage_Hours",
+    "Sleep_Hours",
+    "Academic_Performance",
+    "Social_Interactions",
+    "Exercise_Hours",
+    "Anxiety_Level",
+    "Depression_Level",
+    "Self_Esteem",
+    "Parental_Control",
+    "Screen_Time_Before_Bed",
+    "Phone_Checks_Per_Day",
+    "Apps_Used_Daily",
+    "Time_on_Social_Media",
+    "Time_on_Gaming",
+    "Time_on_Education",
+    "Family_Communication",
+    "Weekend_Usage_Hours",
+    "Total_Screen_Time",
+    "Entertainment_Ratio",
+    "Sleep_Deficit",
+    "Weekend_Extra"
+  ],
+  "categorical_cols": [
+    "Gender",
+    "School_Grade",
+    "Location",
+    "Phone_Usage_Purpose"
+  ],
+  "class_names": [
+    "Low Risk",
+    "Moderate Risk",
+    "High Risk"
+  ],
+  "composite_weights": {
+    "addiction_level": 0.4,
+    "daily_usage": 0.25,
+    "phone_checks": 0.15,
+    "apps_used": 0.1,
+    "entertainment_ratio": 0.1
+  },
+  "thresholds": {
+    "q33": 0.6599230690537085,
+    "q66": 0.7567090269151139
+  }
+}

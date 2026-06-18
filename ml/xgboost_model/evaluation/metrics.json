@@ -1,0 +1,37 @@
+{
+  "train_accuracy": 0.9329,
+  "test_accuracy": 0.845,
+  "train_f1_macro": 0.9325,
+  "test_f1_macro": 0.8434,
+  "overfit_gap": 0.0891,
+  "cv_f1_macro_mean": 0.8605,
+  "cv_f1_macro_std": 0.0157,
+  "cohens_kappa": 0.7674,
+  "mcc": 0.7678,
+  "confusion_matrix": [
+    [
+      176,
+      22,
+      0
+    ],
+    [
+      23,
+      146,
+      29
+    ],
+    [
+      0,
+      19,
+      185
+    ]
+  ],
+  "class_names": [
+    "Low Risk",
+    "Moderate Risk",
+    "High Risk"
+  ],
+  "test_size": 600,
+  "train_size": 2400,
+  "features_used": 26,
+  "learning_curve_final_gap": 0.0755
+}

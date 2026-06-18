@@ -1,0 +1,26 @@
+{
+  "3": {
+    "title": "Doom Scroller",
+    "emoji": "\ud83d\udcf1",
+    "desc": "Unhealthy obsession with social media.",
+    "color": "#ef4444"
+  },
+  "0": {
+    "title": "Dedicated Gamer",
+    "emoji": "\ud83c\udfae",
+    "desc": "High entertainment focus.",
+    "color": "#8b5cf6"
+  },
+  "1": {
+    "title": "Productivity Master",
+    "emoji": "\ud83d\udcda",
+    "desc": "Focused on learning & work.",
+    "color": "#3b82f6"
+  },
+  "2": {
+    "title": "Balanced Explorer",
+    "emoji": "\ud83e\uddd8",
+    "desc": "Healthy digital habits.",
+    "color": "#22c55e"
+  }
+}

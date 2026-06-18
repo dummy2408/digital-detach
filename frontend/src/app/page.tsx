@@ -35,7 +35,9 @@ export default function Home() {
           sleepHours: data.sleep_hours,
           exerciseHours: data.exercise_hours,
           stressLevel: data.stress_level,
-          hobby: data.hobby
+          hobby: data.hobby,
+          peakUsageTime: data.peak_usage_time,
+          sessionStyle: data.session_style
         });
         setView("dashboard");
       }

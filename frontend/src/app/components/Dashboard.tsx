@@ -317,8 +317,8 @@ export default function Dashboard({ email, profile, onLogout }: DashboardProps) 
       } else {
         finalDaily = totalSub;
       }
-    } else if (totalSub > finalDaily) {
-      newErrors.dailyUsageHours = "Cannot be less than sum of sub-categories";
+    } else if (finalDaily > 24) {
+      newErrors.dailyUsageHours = "Cannot exceed 24 hours";
     }
 
     if (Object.keys(newErrors).length > 0) {

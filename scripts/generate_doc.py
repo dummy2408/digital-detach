@@ -128,8 +128,18 @@ def create_document():
         else:
             doc.add_paragraph(f"[Directory not found: {folder_path}]")
             
-    # 5. Q&A Section
-    doc.add_heading('5. Q&A Section', level=1)
+    # 5. Deployment Strategy
+    doc.add_heading('5. Deployment Strategy', level=1)
+    doc.add_paragraph("The deployment architecture of Digital Detach is split into two parts: Frontend and Backend.")
+    
+    doc.add_heading('Frontend Deployment (Vercel)', level=2)
+    doc.add_paragraph("The Next.js frontend is deployed globally on Vercel. Vercel automatically builds and serves the Next.js application, providing a fast and secure HTTPS domain (e.g., https://digital-detach.vercel.app/).")
+
+    doc.add_heading('Backend Deployment (Local + Ngrok)', level=2)
+    doc.add_paragraph("The FastAPI backend, which requires Python and machine learning libraries like XGBoost, is hosted locally on the developer's machine using Uvicorn on port 8000. To allow the Vercel frontend to communicate with this local backend securely, Ngrok is used as a secure internet tunnel. Ngrok creates a permanent, public HTTPS URL (e.g., https://dislike-film-unaudited.ngrok-free.dev) that forwards all requests to the local port 8000. The frontend's environment variable NEXT_PUBLIC_API_URL is configured to point to this Ngrok URL, enabling seamless integration between the cloud-hosted frontend and locally-hosted AI backend.")
+            
+    # 6. Q&A Section
+    doc.add_heading('6. Q&A Section', level=1)
     doc.add_paragraph("Common questions a reviewer or interviewer might ask regarding this project's architecture and decisions:")
     
     qas = [

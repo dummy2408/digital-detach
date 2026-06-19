@@ -33,7 +33,7 @@ Before starting, make sure you have:
 - **Python 3.10+** — [Download here](https://www.python.org/downloads/)  
   ⚠️ During installation, **check "Add python.exe to PATH"** before clicking Install
 - **Git** — [Download here](https://git-scm.com/)
-- **Ngrok** — No account needed. You'll install it via a command and the auth token is already in `CREDENTIALS.txt`
+- **Ngrok** — No account needed, no sign up required
 
 ---
 
@@ -99,39 +99,37 @@ INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
 
 ## Step 5 — Start the Ngrok Tunnel
 
-Open a **new terminal / cmd window** (keep the backend one running) and run these commands one by one:
+Open a **brand new CMD window** (keep the backend one running). Run these 3 commands one by one:
 
-> ✅ **You do NOT need to create an ngrok account.** Just run the commands below exactly as shown.
+> ✅ **No ngrok account or sign up needed** — just copy and paste the commands below.
 
-### 5a — Install Ngrok
+### Command 1 — Install Ngrok
 
-**On Windows (CMD or PowerShell):**
-```bash
+**On Windows:**
+```
 winget install ngrok
 ```
 
-⚠️ After it finishes installing, **close this CMD window and open a brand new one** — Windows won't recognise the `ngrok` command until you do.
+⚠️ After it finishes, **close this CMD window completely and open a fresh new one** — Windows won't recognise `ngrok` until you do this.
 
-**On Mac (Terminal):**
-```bash
+**On Mac:**
+```
 brew install ngrok
 ```
 
-### 5b — Log In to the Project's Ngrok Account
+### Command 2 — Activate the Project's Ngrok Auth Token
 
-In the new CMD window, paste the auth token from `CREDENTIALS.txt` and hit Enter:
+In the new CMD window, run this exactly:
 
-```bash
-ngrok config add-authtoken <ngrok-token-from-CREDENTIALS.txt>
+```
+ngrok config add-authtoken 3FJ6zKtq9Zi54gPVuV6Upv3aDZH_79fhMXAg5LCnkGL6vjQKa
 ```
 
 You should see: `Authtoken saved to configuration file`
 
-### 5c — Start the Tunnel
+### Command 3 — Start the Tunnel
 
-Now run this to connect your local backend to the permanent public URL:
-
-```bash
+```
 ngrok http --domain=dislike-film-unaudited.ngrok-free.dev 8000
 ```
 

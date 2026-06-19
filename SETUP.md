@@ -53,16 +53,16 @@ cd digital-detach
 > ⚠️ **The `.env.local` file is NOT included in the repo** (it contains secret API keys and must never be committed to GitHub).  
 > You need to create it manually using the credentials below.
 
-Create a file at `frontend/.env.local` with this exact content:
+Create a file at `frontend/.env.local` and paste the credentials from the **`CREDENTIALS.txt`** file you received privately:
 
 ```env
-GEMINI_API_KEY=<ask the project owner for this key>
-NEXT_PUBLIC_SUPABASE_URL=https://dxcugxpqtkrgfphzoupq.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=<ask the project owner for this key>
+GEMINI_API_KEY=<from CREDENTIALS.txt>
+NEXT_PUBLIC_SUPABASE_URL=<from CREDENTIALS.txt>
+NEXT_PUBLIC_SUPABASE_ANON_KEY=<from CREDENTIALS.txt>
 NEXT_PUBLIC_API_URL=https://dislike-film-unaudited.ngrok-free.dev
 ```
 
-> 💡 **Note:** Since this is a shared project, you must use the **same keys as the project owner** — these keys are tied to the live Supabase database and Gemini account. Contact the project owner to get the actual values.
+> 💡 `CREDENTIALS.txt` is **not in the repo** for security reasons. The project owner will share it with you directly (via WhatsApp or email).
 
 ---
 
@@ -99,30 +99,37 @@ INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
 
 ## Step 5 — Start the Ngrok Tunnel
 
-Open a **new terminal window** (keep the backend one running) and follow these steps:
+Open a **new terminal / cmd window** (keep the backend one running) and run these commands one by one:
+
+> ✅ **You do NOT need to create an ngrok account.** Just run the commands below exactly as shown.
 
 ### 5a — Install Ngrok
 
-**On Windows:**
+**On Windows (CMD or PowerShell):**
 ```bash
 winget install ngrok
 ```
-> After installation, **close and reopen** your terminal so Windows recognises the `ngrok` command.
 
-**On Mac:**
+⚠️ After it finishes installing, **close this CMD window and open a brand new one** — Windows won't recognise the `ngrok` command until you do.
+
+**On Mac (Terminal):**
 ```bash
 brew install ngrok
 ```
 
-### 5b — Authenticate Ngrok
+### 5b — Log In to the Project's Ngrok Account
+
+In the new CMD window, paste the auth token from `CREDENTIALS.txt` and hit Enter:
 
 ```bash
-ngrok config add-authtoken 3FJ6zKtq9Zi54gPVuV6Upv3aDZH_79fhMXAg5LCnkGL6vjQKa
+ngrok config add-authtoken <ngrok-token-from-CREDENTIALS.txt>
 ```
 
-> This auth token belongs to the project's ngrok account and is linked to the static domain below.
+You should see: `Authtoken saved to configuration file`
 
-### 5c — Start the Tunnel on the Static Domain
+### 5c — Start the Tunnel
+
+Now run this to connect your local backend to the permanent public URL:
 
 ```bash
 ngrok http --domain=dislike-film-unaudited.ngrok-free.dev 8000
@@ -133,7 +140,7 @@ You should see:
 Forwarding   https://dislike-film-unaudited.ngrok-free.dev -> http://localhost:8000
 ```
 
-> 🔴 **Keep this terminal window open too.** The tunnel stops if you close it.
+> 🔴 **Keep this CMD window open.** The tunnel stops the moment you close it.
 
 ---
 

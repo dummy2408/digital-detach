@@ -33,7 +33,7 @@ Before starting, make sure you have:
 - **Python 3.10+** — [Download here](https://www.python.org/downloads/)  
   ⚠️ During installation, **check "Add python.exe to PATH"** before clicking Install
 - **Git** — [Download here](https://git-scm.com/)
-- **Ngrok account** — [Sign up free](https://ngrok.com/) *(you'll use the project's auth token, see below)*
+- **Ngrok** — No account needed. You'll install it via a command and the auth token is already in `CREDENTIALS.txt`
 
 ---
 
